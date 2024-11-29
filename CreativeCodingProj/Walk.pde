@@ -14,7 +14,7 @@ class Walk {
   fY = 97;
   fW = 35;
   fH = 45;
-  frames = new PImage[8];
+  frames = new PImage[9];
   //tempX = 500/2;
   currentFrame = 0;
   frameInterval = 8;
@@ -50,7 +50,9 @@ class Walk {
     if (currentFrame==6){
       image(frames[currentFrame], xPosOfAnim, 607);
     } else if (currentFrame==7){
-      image(frames[currentFrame], xPosOfAnim, 606);
+      image(frames[currentFrame], xPosOfAnim-8, 607); //animation was drifting to the right, so i had to minus a value to keep it from doing that
+    } else if ((currentFrame==5)){
+      image(frames[currentFrame], xPosOfAnim, 601);
     } else {
       image(frames[currentFrame], xPosOfAnim, 600);
     }
