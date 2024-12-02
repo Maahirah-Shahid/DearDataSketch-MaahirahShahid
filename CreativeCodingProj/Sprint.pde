@@ -2,7 +2,6 @@ class Sprint {
   PImage Spritesheet, scaledSpritesheet;
   PImage[] frames;
   int fX,fY,fW,fH; //the frame's x,y coordinates and width and height
-  //int tempX; //temporary x used to align the sprites so i can check if they display
   int currentFrame, frameInterval; //used for checking what frame we're on, and interval is used to display the frames for however long
   int xPosOfAnim; //used to control the x position of the animation so sprite can move from right to left
   int moveSpeed; //used to control movement speed of the animation
@@ -15,7 +14,6 @@ class Sprint {
   fW = 51;
   fH = 45;
   frames = new PImage[8];
-  //tempX = 400/2;
   currentFrame = 0;
   frameInterval = 8;
   xPosOfAnim = width;
@@ -70,16 +68,5 @@ class Sprint {
     if (xPosOfAnim < -frames[currentFrame].width) {
         xPosOfAnim= width;  // Reset to the right side of the screen
       }
-    
-    
-    //for (int i=0;i<8;i++){
-      //if ((i!=6) && (i!=7)){
-        //image(frames[i], tempX + (i * (fW*2)), 500);
-      //} else if (i==6){
-        //image(frames[i], tempX + (i * (fW*2)), 507); //needed because frame 6 is unaligned
-      //} else if (i==7){
-        //image(frames[i], tempX + (i * (fW*2)), 506); //needed because frame 7 is unaligned
-      //}
-    //}
   }
 }
